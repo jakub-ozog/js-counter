@@ -1,6 +1,17 @@
+
 * {
     box-sizing: border-box;
     background-color: white;
+    font-family: 'Dela Gothic One', cursive;
+}
+
+body {
+    background-image: url('/assets/images/wave.svg');
+    background-position: bottom;
+    background-size: auto;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
 }
 
 html {
@@ -34,5 +45,19 @@ html {
         display: flex;
         justify-content: center;
         gap: 5rem;
+
+        button {
+            outline: none;
+            border-radius: 15px;
+            padding: 1rem 1.25rem;
+            cursor: pointer;
+            transition: all .2s;
+            border: 2px solid hsl(0, 0%, 13%);
+
+            &:hover {
+                background-color: rgb(92, 18, 93);
+                color: white;
+            }
+        }
     }
 }

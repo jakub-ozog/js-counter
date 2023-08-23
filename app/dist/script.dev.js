@@ -1,23 +1,34 @@
 "use strict";
 
-var result = document.querySelector('.counter__result');
-var decreaseBtn = document.querySelector('.counter__decrease');
-var resetBtn = document.querySelector('.counter__reset');
-var increaseBtn = document.querySelector('.counter__increase');
-var previousNum = null;
-var nextNum = null;
+var result = document.querySelector(".counter__result");
+var decreaseBtn = document.querySelector(".counter__decrease");
+var resetBtn = document.querySelector(".counter__reset");
+var increaseBtn = document.querySelector(".counter__increase");
 var currentNum = 0;
-increaseBtn.addEventListener('click', function () {
+increaseBtn.addEventListener("click", function () {
   currentNum++;
-  result.textContent = currentNum;
 
   if (currentNum > 0) {
-    result.style.color = 'green';
-  } else if (currentNum === 0) {
-    result.style.color = 'black';
-  } else {
-    result.style.color = 'red';
+    result.style.color = "green";
+  } else if (currentNum == 0) {
+    result.style.color = "black";
   }
 
-  console.log(currentNum);
+  result.textContent = currentNum;
+});
+resetBtn.addEventListener("click", function () {
+  result.style.color = "black";
+  currentNum = 0;
+  result.textContent = currentNum;
+});
+decreaseBtn.addEventListener("click", function () {
+  currentNum = currentNum - 1;
+
+  if (currentNum < 0) {
+    result.style.color = "red";
+  } else if (currentNum == 0) {
+    result.style.color = "black";
+  }
+
+  result.textContent = currentNum;
 });
